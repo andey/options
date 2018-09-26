@@ -15,4 +15,13 @@
 
 class Option < ApplicationRecord
   belongs_to :stock
+  scope :with_volume, -> { where('volume > 100') }
+
+  def calculate_yield
+    if strike > stock.price
+      price.to_f / stock.price.to_f * 100.0
+    else
+      ((price + strike - stock.price)/stock.price.to_f) * 100.0
+    end
+  end
 end

@@ -13,14 +13,17 @@
 #  yield      :float
 #
 
-
 ActiveAdmin.register Option do
-  index do
+  scope :with_volume, default: true, show_count: false
+  scope :all, show_count: false
+
+  index pagination_total: false do
     column :stock
+    column :updated_at do |o| time_ago_in_words o.updated_at end
     column :expires_at do |o| o.expires_at.to_date end
     column :strike
     column :price
     column :volume
-    column :yield
+    column :yield do |o| number_to_percentage(o.calculate_yield) end
   end
 end
