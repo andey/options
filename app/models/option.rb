@@ -6,7 +6,8 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  stock_id   :integer          not null
-#  expires_at :date             not null
+#  symbol     :string           not null
+#  expires_at :datetime         not null
 #  strike     :integer          not null
 #  price      :integer          not null
 #  volume     :integer          not null
