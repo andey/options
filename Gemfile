@@ -8,7 +8,9 @@ gem 'puma'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
+gem 'httparty'
 
 group :development do
   gem 'listen'
+  gem 'awesome_print'
 end

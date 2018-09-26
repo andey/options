@@ -19,19 +19,19 @@ ActiveRecord::Schema.define(version: 2018_09_26_185651) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "stock_id", null: false
+    t.string "symbol", null: false
     t.date "expires_at", null: false
     t.integer "strike", null: false
     t.integer "price", null: false
     t.integer "volume", null: false
     t.float "yield"
-    t.index ["stock_id", "expires_at"], name: "index_options_on_stock_id_and_expires_at", unique: true
   end
 
   create_table "stocks", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ticker", limit: 10, null: false
-    t.integer "price", null: false
+    t.integer "price"
   end
 
 end
