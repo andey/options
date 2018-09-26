@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_26_193632) do
+ActiveRecord::Schema.define(version: 2018_09_26_203831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,10 @@ ActiveRecord::Schema.define(version: 2018_09_26_193632) do
     t.datetime "updated_at", null: false
     t.string "ticker", limit: 10, null: false
     t.integer "price"
+    t.integer "volume"
+    t.datetime "earnings_at"
+    t.string "name"
+    t.string "expiry_dates", default: ["0"], array: true
   end
 
 end
