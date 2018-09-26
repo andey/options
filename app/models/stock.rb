@@ -12,6 +12,10 @@
 class Stock < ApplicationRecord
   has_many :options
 
+  def display_name
+    ticker.upcase
+  end
+
   def fetch
     begin
       response = HTTParty.get("https://query2.finance.yahoo.com/v7/finance/options/#{ticker}")

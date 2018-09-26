@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2018_09_26_193632) do
     t.datetime "updated_at", null: false
     t.integer "stock_id", null: false
     t.string "symbol", null: false
-    t.date "expires_at", null: false
+    t.datetime "expires_at", null: false
     t.integer "strike", null: false
     t.integer "price", null: false
     t.integer "volume", null: false
