@@ -17,6 +17,10 @@ ActiveAdmin.register Option do
   scope :with_volume, default: true, show_count: false
   scope :all, show_count: false
 
+  filter :stock_ticker_eq, label: 'Ticker'
+  filter :expires_at
+  filter :strike
+
   index pagination_total: false do
     column :stock
     column :updated_at do |o| time_ago_in_words o.updated_at end
