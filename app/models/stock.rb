@@ -22,12 +22,12 @@ class Stock < ApplicationRecord
   def refresh
     response = fetch
     response.each do |call|
-      options.where(symbol: call["contractSymbol"]).first_or_create! do |o|
-        o.expires_at = Time.at(call["expiration"])
-        o.strike = call["strike"].to_f * 100
-        o.price = call["lastPrice"].to_f * 100
-        o.volume = call["volume"]
-      end
+      o = options.find_or_initialize_by(symbol: call["contractSymbol"])
+      o.expires_at = Time.at(call["expiration"])
+      o.strike = call["strike"].to_f * 100
+      o.price = call["lastPrice"].to_f * 100
+      o.volume = call["volume"]
+      o.save
     end
     return nil
   end

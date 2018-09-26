@@ -9,6 +9,8 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'httparty'
+gem 'activeadmin'
+gem 'devise'
 
 group :development do
   gem 'listen'
