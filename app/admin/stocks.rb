@@ -17,7 +17,7 @@ ActiveAdmin.register Stock do
 
   controller do
     def fetch
-      resource.fetch
+      resource.fetch()
     end
   end
 end
