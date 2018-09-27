@@ -52,7 +52,7 @@ class Stock < ApplicationRecord
     update(
         price: response["quote"]["regularMarketPrice"].to_f * 100,
         volume: response["quote"]["averageDailyVolume3Month"],
-        earnings_at: Time.at(response["quote"]["earningsTimestamp"]),
+        # earnings_at: Time.at(response["quote"]["earningsTimestamp"]),
         name: response["quote"]["longName"],
         expiry_dates: response["expirationDates"]
     )
