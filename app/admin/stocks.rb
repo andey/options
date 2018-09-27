@@ -3,7 +3,7 @@ ActiveAdmin.register Stock do
 
   member_action :fetch, method: :get
   action_item :fetch, only: :show do
-    link_to 'fetch', admin_stock_path(resource)
+    link_to 'fetch', fetch_admin_stock_path(resource)
   end
 
   index pagination_total: false do
@@ -18,6 +18,7 @@ ActiveAdmin.register Stock do
   controller do
     def fetch
       resource.fetch()
+      redirect_to admin_stock_path(resource)
     end
   end
 end
