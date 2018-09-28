@@ -28,6 +28,6 @@ ActiveAdmin.register Option do
     column :strike
     column :price
     column :volume
-    column :yield do |o| number_to_percentage(o.calculate_yield) end
+    column :yield
   end
 end
