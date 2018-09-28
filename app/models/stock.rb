@@ -60,9 +60,9 @@ class Stock < ApplicationRecord
 
   def calculate_yield(strike, call_price)
     if strike > price
-      (call_price.to_f / price.to_f) * 100.0
+      call_price.to_f / price.to_f
     else
-      ((call_price.to_f + strike.to_f - price.to_f) / price.to_f) * 100.0
+      (call_price.to_f + strike.to_f - price.to_f) / price.to_f
     end
   end
 end
