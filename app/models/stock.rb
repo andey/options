@@ -49,14 +49,18 @@ class Stock < ApplicationRecord
   end
 
   def update_stock(response)
-    update(
-        price: response["quote"]["regularMarketPrice"].to_f * 100,
-        volume: response["quote"]["averageDailyVolume3Month"],
-        # earnings_at: Time.at(response["quote"]["earningsTimestamp"]),
-        name: response["quote"]["longName"],
-        expiry_dates: response["expirationDates"],
-        updated_at: Time.now
-    )
+    begin
+      update(
+          price: response["quote"]["regularMarketPrice"].to_f * 100,
+          volume: response["quote"]["averageDailyVolume3Month"],
+          # earnings_at: Time.at(response["quote"]["earningsTimestamp"]),
+          name: response["quote"]["longName"],
+          expiry_dates: response["expirationDates"],
+          updated_at: Time.now
+      )
+    rescue
+      update(update_at: Time.now)
+    end
   end
 
   def calculate_yield(strike, call_price)
