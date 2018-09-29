@@ -11,7 +11,7 @@
 #  strike     :integer          not null
 #  price      :integer          not null
 #  volume     :integer          not null
-#  yield      :float
+#  yield      :decimal(5, 4)
 #
 
 class Option < ApplicationRecord

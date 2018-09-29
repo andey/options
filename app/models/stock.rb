@@ -10,7 +10,7 @@
 #  volume       :integer
 #  earnings_at  :datetime
 #  name         :string
-#  expiry_dates :string           default([]), is an Array
+#  expiry_dates :string           default(["\"0\""]), is an Array
 #
 
 class Stock < ApplicationRecord
