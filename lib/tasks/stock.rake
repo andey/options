@@ -1,8 +1,11 @@
 namespace :stock do
   task :refresh => :environment do
     Stock.order(:updated_at).limit(10).each do |stock|
-      stock.fetch()
-      sleep(5)
+      begin
+        stock.fetch()
+      ensure
+        sleep(5)
+      end
     end
   end
 
