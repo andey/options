@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2018_09_29_020728) do
     t.integer "strike", null: false
     t.integer "price", null: false
     t.integer "volume", null: false
-    t.decimal "yield", precision: 6, scale: 4
+    t.decimal "yield", precision: 5, scale: 4
     t.index ["expires_at"], name: "index_options_on_expires_at"
     t.index ["stock_id"], name: "index_options_on_stock_id"
     t.index ["strike"], name: "index_options_on_strike"
