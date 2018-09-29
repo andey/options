@@ -1,7 +1,9 @@
 namespace :stock do
   task :refresh => :environment do
-    stock = Stock.order(:updated_at).limit(1).first
-    stock.fetch()
+    Stock.order(:updated_at).limit(10).each do |stock|
+      stock.fetch()
+      sleep(5)
+    end
   end
 
   task :seed => :environment do
