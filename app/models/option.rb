@@ -16,7 +16,6 @@
 
 class Option < ApplicationRecord
   belongs_to :stock
-  scope :with_volume, -> { where('options.volume > 100') }
 
   def calculate_yield
     if strike > stock.price
