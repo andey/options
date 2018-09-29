@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_26_203831) do
+ActiveRecord::Schema.define(version: 2018_09_29_020728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,13 @@ ActiveRecord::Schema.define(version: 2018_09_26_203831) do
     t.integer "strike", null: false
     t.integer "price", null: false
     t.integer "volume", null: false
-    t.float "yield"
+    t.decimal "yield", precision: 6, scale: 4
+    t.index ["expires_at"], name: "index_options_on_expires_at"
+    t.index ["stock_id"], name: "index_options_on_stock_id"
+    t.index ["strike"], name: "index_options_on_strike"
+    t.index ["symbol"], name: "index_options_on_symbol", unique: true
+    t.index ["volume"], name: "index_options_on_volume"
+    t.index ["yield"], name: "index_options_on_yield"
   end
 
   create_table "stocks", force: :cascade do |t|
