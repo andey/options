@@ -17,6 +17,7 @@ ActiveAdmin.register Option do
   filter :stock_ticker_eq, label: 'Ticker'
   filter :expires_at
   filter :strike
+  filter :volume
 
   index pagination_total: false do
     column :stock
