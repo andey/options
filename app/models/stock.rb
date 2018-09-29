@@ -21,6 +21,7 @@ class Stock < ApplicationRecord
   end
 
   def fetch
+    touch(:updated_at)
     expiry_dates.each do |date|
       begin
         puts "processing date: #{date}"
@@ -49,18 +50,13 @@ class Stock < ApplicationRecord
   end
 
   def update_stock(response)
-    begin
-      update(
-          price: response["quote"]["regularMarketPrice"].to_f * 100,
-          volume: response["quote"]["averageDailyVolume3Month"],
-          # earnings_at: Time.at(response["quote"]["earningsTimestamp"]),
-          name: response["quote"]["longName"],
-          expiry_dates: response["expirationDates"],
-          updated_at: Time.now
-      )
-    rescue
-      update(update_at: Time.now)
-    end
+    update(
+        price: response["quote"]["regularMarketPrice"].to_f * 100,
+        volume: response["quote"]["averageDailyVolume3Month"],
+        # earnings_at: Time.at(response["quote"]["earningsTimestamp"]),
+        name: response["quote"]["longName"],
+        expiry_dates: response["expirationDates"]
+    )
   end
 
   def calculate_yield(strike, call_price)
