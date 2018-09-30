@@ -19,6 +19,9 @@ ActiveAdmin.register Option do
   filter :strike
   filter :volume
 
+  scope :interesting, default: true
+  scope :all
+
   index pagination_total: false do
     column :stock
     column :updated_at do |o| time_ago_in_words o.updated_at end
