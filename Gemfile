@@ -11,6 +11,8 @@ gem 'coffee-rails'
 gem 'httparty'
 gem 'activeadmin'
 gem 'devise'
+gem 'sidekiq'
+gem 'sidekiq-cron'
 
 group :development do
   gem 'listen'

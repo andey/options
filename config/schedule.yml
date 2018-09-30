@@ -1,0 +1,3 @@
+refresh_cron:
+  cron: "* * * * *"
+  class: "RefreshCron"
