@@ -1,5 +1,5 @@
 ActiveAdmin.register Stock do
-  permit_params :ticker
+  permit_params :ticker, :expiry_dates
 
   member_action :fetch, method: :get
   action_item :fetch, only: :show do
