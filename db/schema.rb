@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_29_020728) do
+ActiveRecord::Schema.define(version: 2018_09_30_010902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,12 @@ ActiveRecord::Schema.define(version: 2018_09_29_020728) do
     t.datetime "earnings_at"
     t.string "name"
     t.string "expiry_dates", default: ["0"], array: true
+    t.index ["earnings_at"], name: "index_stocks_on_earnings_at"
+    t.index ["name"], name: "index_stocks_on_name"
+    t.index ["price"], name: "index_stocks_on_price"
+    t.index ["ticker"], name: "index_stocks_on_ticker"
+    t.index ["updated_at"], name: "index_stocks_on_updated_at"
+    t.index ["volume"], name: "index_stocks_on_volume"
   end
 
 end
