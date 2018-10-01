@@ -16,7 +16,7 @@
 
 class Option < ApplicationRecord
   belongs_to :stock
-  scope :interesting, -> { where('expires_at < ?', 3.months.from_now).where('volume > 10') }
+  scope :interesting, -> { where('options.expires_at < ?', 3.months.from_now).where('options.volume > 10') }
 
   def calculate_yield
     if strike > stock.price
