@@ -1,6 +1,10 @@
 ActiveAdmin.register Stock do
   permit_params :ticker, :expiry_dates
 
+  filter :ticker
+  filter :name
+  filter :price
+
   member_action :fetch, method: :get
   action_item :fetch, only: :show do
     link_to 'fetch', fetch_admin_stock_path(resource)
