@@ -2,6 +2,7 @@
   <thead>
   <tr>
     <th>Stock</th>
+    <td>Price</td>
     <th>Updated</th>
     <th>Expiry</th>
     <th>Strike</th>
@@ -13,7 +14,8 @@
   <tbody>
   <% Option.interesting.order(:yield).reverse_order.limit(100).each do |o| %>
     <tr>
-      <td><%= o.stock %></td>
+      <td><%= o.stock.ticker %></td>
+      <td><%= o.stock.price %></td>
       <td><%= o.updated_at %></td>
       <td><%= o.expires_at %></td>
       <td><%= o.strike %></td>
