@@ -14,7 +14,7 @@
   <tbody>
   <% Option.interesting.order(:yield).reverse_order.limit(100).each do |o| %>
     <tr>
-      <td><%= o.stock.ticker %></td>
+      <td><%= o.stock.ticker.upcase %></td>
       <td><%= o.stock.price %></td>
       <td><%= o.updated_at %></td>
       <td><%= o.expires_at.to_date %></td>
