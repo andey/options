@@ -18,3 +18,7 @@ group :development do
   gem 'listen'
   gem 'awesome_print'
 end
+
+group :production do
+  gem 'rollbar'
+end
