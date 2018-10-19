@@ -12,7 +12,4 @@
 //
 //= require jquery
 //= require dataTables/jquery.dataTables
-
-$(document).ready( function () {
-    $('#datatable').DataTable();
-} );
+//= require ui

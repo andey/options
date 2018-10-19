@@ -1,28 +1,2 @@
 <table id="datatable">
-  <thead>
-  <tr>
-    <th>Stock</th>
-    <th>Price</th>
-    <th>Updated</th>
-    <th>Expiry</th>
-    <th>Strike</th>
-    <th>Premium</th>
-    <th>Volume</th>
-    <th>Yield</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% Option.interesting.order(:yield).reverse_order.limit(100).each do |o| %>
-    <tr>
-      <td><%= o.stock.ticker.upcase %></td>
-      <td><%= o.stock.price %></td>
-      <td><%= o.updated_at %></td>
-      <td><%= o.expires_at.to_date %></td>
-      <td><%= o.strike %></td>
-      <td><%= o.price %></td>
-      <td><%= o.volume %></td>
-      <td><%= o.yield %></td>
-    </tr>
-  <% end %>
-  </tbody>
 </table>
