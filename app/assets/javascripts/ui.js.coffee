@@ -6,7 +6,8 @@ $(document).ready ->
       "search": "ticker:"
     }
     "ajax": "/api/v1/options",
-    "order": [[ 6, "desc" ]]
+    "order": [[ 6, "desc" ]],
+    "lengthMenu": [15, 30, 50, 100]
     "columns": [
       {"data": "symbol", "name": "symbol", "title": "option"},
       {"data": "updated_at", "name": "updated_at", "title": "updated at"},
