@@ -25,4 +25,12 @@ class Option < ApplicationRecord
       ((price + strike - stock.price)/stock.price.to_f) * 100.0
     end
   end
+
+  def updated_at
+    read_attribute(:updated_at).to_i
+  end
+
+  def expires_at
+    read_attribute(:expires_at).to_date
+  end
 end
