@@ -8,7 +8,7 @@ class Api::V1::OptionsController < ActionController::Base
   private
 
   def sort_column
-    %w(symbol updated_at stock_id expires_at strike price volume yield)[params[:order]["0"][:column].to_i]
+    %w(symbol updated_at expires_at strike price volume yield)[params[:order]["0"][:column].to_i]
   end
 
   def sort_direction

@@ -6,11 +6,10 @@ $(document).ready ->
       "search": "ticker:"
     }
     "ajax": "/api/v1/options",
-    "order": [[ 7, "desc" ]]
+    "order": [[ 6, "desc" ]]
     "columns": [
       {"data": "symbol", "name": "symbol", "title": "option"},
       {"data": "updated_at", "name": "updated_at", "title": "updated at"},
-      {"data": "stock_id", "name": "stock_ticker", "title": "ticker"},
       {"data": "expires_at", "name": "expires_at", "title": "expires at"},
       {"data": "strike", "name": "strike", "title": "strike"},
       {"data": "price", "name": "price", "title": "price"},
