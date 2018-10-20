@@ -2,17 +2,19 @@ $(document).ready ->
   $('#datatable').DataTable(
     "processing": true,
     "serverSide": true,
+    "language": {
+      "search": "ticker:"
+    }
     "ajax": "/api/v1/options",
+    "order": [[ 7, "desc" ]]
     "columns": [
-      {"data": "id"},
-      {"data": "created_at"},
-      {"data": "updated_at"},
-      {"data": "stock_id"},
-      {"data": "symbol"},
-      {"data": "expires_at"},
-      {"data": "strike"},
-      {"data": "price"},
-      {"data": "volume"},
-      {"data": "yield"}
+      {"data": "symbol", "name": "symbol", "title": "option"},
+      {"data": "updated_at", "name": "updated_at", "title": "updated at"},
+      {"data": "stock_id", "name": "stock_ticker", "title": "ticker"},
+      {"data": "expires_at", "name": "expires_at", "title": "expires at"},
+      {"data": "strike", "name": "strike", "title": "strike"},
+      {"data": "price", "name": "price", "title": "price"},
+      {"data": "volume", "name": "volume", "title": "volume"},
+      {"data": "yield", "name": "yield", "title": "yield"}
     ]
   )
