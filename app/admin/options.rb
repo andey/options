@@ -18,6 +18,7 @@ ActiveAdmin.register Option do
   filter :expires_at
   filter :strike
   filter :volume
+  filter :price
   filter :yield
 
   scope :interesting, default: true
